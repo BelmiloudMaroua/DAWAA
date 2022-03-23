@@ -27,6 +27,16 @@ flutter:
     - assets/images/logo.png
     - assets/images/photo1.png
     - assets/images/photo2.png
+    - assets/images/image.png
+    - assets/images/cat1.png
+    - assets/images/cat13.png
+    - assets/images/cat3.png
+    - assets/images/cat4.png
+    - assets/images/cat6.png
+    - assets/images/cat7.png
+    - assets/images/cat8.png
+    - assets/images/cat12.png
+
 
   fonts:
     - family: Nunito

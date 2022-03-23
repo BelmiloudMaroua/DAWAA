@@ -10,7 +10,6 @@ class custompageview extends StatelessWidget {
     return PageView(
       controller:pageController ,
       children: [
-        
         pageviewitem(
           image: 'assets/images/photo1.png',
           title: 'Welcome',

@@ -58,7 +58,7 @@ class _splashbodystate extends State<splashbody> with SingleTickerProviderStateM
   }
 
   void goToNextView() {
-    Future.delayed(Duration(seconds:3),()
+    Future.delayed(Duration(seconds:4),()
        {
         Get.to(()=> onboardingview(), transition: Transition.fade);
        }

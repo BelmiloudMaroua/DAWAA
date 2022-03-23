@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:myapp/core/utils/constants.dart';
 import 'package:myapp/core/utils/size_config.dart';
 
 class customgeneralbutton extends StatelessWidget {
-  const customgeneralbutton({Key? key,this.text}) : super(key: key);
+  const customgeneralbutton({Key? key,this.text, this.OnTap}) : super(key: key);
  final String? text;
+ final VoidCallback? OnTap;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 40,
-      width: 20,
+    return GestureDetector(
+       onTap: OnTap,
+    child : Container(
+      height: 50,
+      width: 100,
       decoration: BoxDecoration(
         color: kbuttoncolor,
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(10),
        ),
       child: Center(
         child : Text(
@@ -25,6 +29,6 @@ class customgeneralbutton extends StatelessWidget {
                textAlign : TextAlign.left,
                ),
       ),
-    );
+    ));
   }
 }
