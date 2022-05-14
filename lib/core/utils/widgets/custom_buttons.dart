@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:myapp/core/utils/constants.dart';
 import 'package:myapp/core/utils/size_config.dart';
 
@@ -23,7 +22,7 @@ class customgeneralbutton extends StatelessWidget {
                 text!, 
                style: TextStyle(
                  fontFamily:'Nunito-Regular.ttf',
-                 fontSize: 15,
+                 fontSize:17,
                  color: Colors.white,
                ),
                textAlign : TextAlign.left,

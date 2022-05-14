@@ -34,7 +34,7 @@ class Pharmaciesdawaacard extends StatelessWidget {
       child: Container(
         margin: EdgeInsets.only(left: 20,top:5,bottom:7),
         width:236,
-        height: 140,
+        height: 180,
         decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20),

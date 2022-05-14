@@ -13,9 +13,7 @@ class dawaaapp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       home: splashview(
-        
-      )
-      
-    );
+         )
+      );
   }
 }

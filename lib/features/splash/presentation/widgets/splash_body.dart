@@ -26,8 +26,6 @@ class _splashbodystate extends State<splashbody> with SingleTickerProviderStateM
    animationController?.dispose(); 
    super.dispose();
  }       
-     
-  
   @override
   Widget build(BuildContext context) {
     sizeconfig().init(context);
@@ -45,19 +43,17 @@ class _splashbodystate extends State<splashbody> with SingleTickerProviderStateM
                  fontSize: 35,
                  fontWeight: FontWeight.bold,
                  color: ktextcolor,
-               ),
-               ),
+         ),
+           ),
             ),
-          ],
-        ),   
-        ],
-          ),
-
-         ); 
+             ],
+              ),   
+               ],
+                ),
+                 ); 
         
   }
-
-  void goToNextView() {
+ void goToNextView() {
     Future.delayed(Duration(seconds:4),()
        {
         Get.to(()=> onboardingview(), transition: Transition.fade);

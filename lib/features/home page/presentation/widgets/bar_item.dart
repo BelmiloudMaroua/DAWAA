@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/core/utils/constants.dart';
 import 'package:myapp/core/utils/widgets/container_drawer.dart';
-import 'package:myapp/features/home%20page/categorie_screen.dart';
-import 'package:myapp/features/home%20page/pharmacie_screen.dart';
+import 'package:myapp/core/utils/widgets/title_underline.dart';
+import 'package:myapp/features/home%20page/presentation/widgets/allpharm.dart';
+import 'package:myapp/features/home%20page/presentation/widgets/product.dart';
 
-import 'package:myapp/features/home%20page/presentation/widgets/Advertissments_dawaa.dart';
-import 'package:myapp/features/home%20page/presentation/widgets/Categories_dawaa.dart';
-import 'package:myapp/features/home%20page/presentation/widgets/Pharmacies_dawaa.dart';
-import 'package:myapp/features/home%20page/presentation/widgets/title_with_more_btn.dart';
-
-class mydraw extends StatelessWidget {
-   mydraw({ Key? key,required this.size }) : super(key: key);
-GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-
- final Size size;
+class baritem extends StatelessWidget {
+   baritem({
+    Key? key,
+    required this.size,
+  }) : super(key: key);
+  final List<Product> Listproduct = List.from(products);
+  GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  final Size size;
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Scaffold(
+      child:  Scaffold(
         key: _scaffoldKey,
         drawer: Drawer(child: Column(
           children: [
@@ -28,9 +27,10 @@ GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
           ),
 
 
-          containerdrawer(titre: 'Locating settings',mic:Icons. location_on_outlined),
+         containerdrawer(titre: 'Locating settings',mic:Icons. location_on_outlined),
           containerdrawer(titre: 'Login as a pharmacy',mic: Icons.login_rounded),
           containerdrawer(titre:'Help',mic: Icons.help_outline_rounded),
+             
              
           ],
         )
@@ -104,26 +104,25 @@ GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
             ),
    
    ]),),
-            titlewithmorebtn(
-               title:"Categories", press: (){},
-               co: ktextcolor.withOpacity(0.5),
-                scr: categoriescreen(),),
-            CategoriesDAWAA(),
-            titlewithmorebtn(
-              title:"Pharmacies",press: (){},
-              co: ktextcolor.withOpacity(0.5),   
-              scr:pharmaciescreen() 
-            ),
-            Pharmaciesdawaa(),
-            titlewithmorebtn(
-              title:"Advertissments" ,press: (){},
-              co: Colors.white,
-            ),
-            Advertissmentsdawaa(),
-
+   titlewithcustomunderline(text:'Pharmacies',leeft:0,toop:0,riight:240,bootom:5,),
+        SizedBox(
+          height:10,
+        ),
+   Expanded(
+          child: Stack(
+            children: [
+              ListView.builder(
+                itemBuilder: (context, index) =>allpharm(
+                  itemIndex: index,
+                  pro: Listproduct[index],
+                ),
+                itemCount: Listproduct.length,
+              )
+            ],
+          ),
+        ),
    ],
-   )
-      ),
-    );
+   ),
+    ));
   }
 }

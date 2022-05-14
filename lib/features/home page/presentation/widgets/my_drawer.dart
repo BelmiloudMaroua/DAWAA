@@ -1,19 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/core/utils/constants.dart';
-import 'package:myapp/core/utils/widgets/container_drawer.dart';
-import 'package:myapp/features/home%20page/categorie_screen.dart';
-import 'package:myapp/features/home%20page/pharmacie_screen.dart';
 
-import 'package:myapp/features/home%20page/presentation/widgets/Advertissments_dawaa.dart';
-import 'package:myapp/features/home%20page/presentation/widgets/Categories_dawaa.dart';
-import 'package:myapp/features/home%20page/presentation/widgets/Pharmacies_dawaa.dart';
-import 'package:myapp/features/home%20page/presentation/widgets/title_with_more_btn.dart';
-
-class mydraw extends StatelessWidget {
-   mydraw({ Key? key,required this.size }) : super(key: key);
+class mydrawer extends StatelessWidget {
+   mydrawer({ Key? key, required this.size}) : super(key: key);
 GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-
- final Size size;
+final Size size;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,9 +19,75 @@ GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
           ),
 
 
-          containerdrawer(titre: 'Locating settings',mic:Icons. location_on_outlined),
-          containerdrawer(titre: 'Login as a pharmacy',mic: Icons.login_rounded),
-          containerdrawer(titre:'Help',mic: Icons.help_outline_rounded),
+         Container(
+           padding: EdgeInsets.only(left: 10),
+            width: double.infinity,
+            height:65,
+            decoration: BoxDecoration(border: Border(bottom: BorderSide(color:kshadowcolor,width:1))),
+           child: Row(
+            children: [
+            Icon(Icons.location_on_outlined,color:kunselectedcolor,size:32,) ,
+            SizedBox(
+              width:8,
+            ),
+            Text('Location settings',
+             style: TextStyle(
+             fontFamily:'Nunito',
+             fontWeight:FontWeight.bold ,
+             fontSize: 17,
+             color: ktextmorecolor,
+             ),
+              
+              ) ,
+              ],
+            ),
+          ),
+          Container(
+           padding: EdgeInsets.only(left: 10),
+            width: double.infinity,
+            height:65,
+            decoration: BoxDecoration(border: Border(bottom: BorderSide(color:kshadowcolor,width:1))),
+           child: Row(
+            children: [
+            Icon(Icons.login_rounded,color:kunselectedcolor,size:32,) ,
+            SizedBox(
+              width:8,
+            ),
+            Text('Log in as a pharmacy',
+             style: TextStyle(
+             fontFamily:'Nunito',
+             fontWeight:FontWeight.bold ,
+             fontSize: 17,
+             color: ktextmorecolor,
+             ),
+              
+              ) ,
+              ],
+            ),
+          ),
+          Container(
+           padding: EdgeInsets.only(left: 10),
+            width: double.infinity,
+            height:65,
+            decoration: BoxDecoration(border: Border(bottom: BorderSide(color:kshadowcolor,width:1))),
+           child: Row(
+            children: [
+            Icon(Icons.help_outline_rounded,color:kunselectedcolor,size:32,) ,
+            SizedBox(
+              width:8,
+            ),
+            Text('Help',
+             style: TextStyle(
+             fontFamily:'Nunito',
+             fontWeight:FontWeight.bold ,
+             fontSize: 17,
+             color: ktextmorecolor,
+             ),
+              
+              ) ,
+              ],
+            ),
+          )   
              
           ],
         )
@@ -104,22 +161,7 @@ GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
             ),
    
    ]),),
-            titlewithmorebtn(
-               title:"Categories", press: (){},
-               co: ktextcolor.withOpacity(0.5),
-                scr: categoriescreen(),),
-            CategoriesDAWAA(),
-            titlewithmorebtn(
-              title:"Pharmacies",press: (){},
-              co: ktextcolor.withOpacity(0.5),   
-              scr:pharmaciescreen() 
-            ),
-            Pharmaciesdawaa(),
-            titlewithmorebtn(
-              title:"Advertissments" ,press: (){},
-              co: Colors.white,
-            ),
-            Advertissmentsdawaa(),
+            
 
    ],
    )

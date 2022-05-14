@@ -31,11 +31,12 @@ flutter:
     - assets/images/cat1.png
     - assets/images/cat13.png
     - assets/images/cat3.png
-    - assets/images/cat4.png
+    - assets/images/cat14.png
     - assets/images/cat6.png
     - assets/images/cat7.png
     - assets/images/cat8.png
     - assets/images/cat12.png
+    - assets/images/Cap.png
 
 
   fonts:

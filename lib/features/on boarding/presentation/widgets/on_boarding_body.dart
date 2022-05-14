@@ -4,17 +4,16 @@ import 'package:get/get.dart';
 import 'package:myapp/core/utils/constants.dart';
 import 'package:myapp/core/utils/size_config.dart';
 import 'package:myapp/core/utils/widgets/custom_buttons.dart';
-import 'package:myapp/features/home%20page/presentation/home_view.dart';
+import 'package:myapp/features/home%20page/presentation/widgets/My_bottom_nav_bar.dart';
 import 'package:myapp/features/on%20boarding/presentation/widgets/custom_indicator.dart';
 import 'package:myapp/features/on%20boarding/presentation/widgets/custom_page_view.dart';
+import 'package:myapp/features/on%20boarding/presentation/widgets/skip_buttom.dart';
 
 class onboardingbody extends StatefulWidget {
   const onboardingbody({Key? key}) : super(key: key);
-
-  @override
+ @override
   State<onboardingbody> createState() => _onboardingbodyState();
 }
-
 class _onboardingbodyState extends State<onboardingbody> {
   PageController? pageController;
   @override
@@ -23,9 +22,8 @@ class _onboardingbodyState extends State<onboardingbody> {
       initialPage: 0
     )..addListener(() {
       setState(() {
-        
-      });
     });
+     });
     super.initState();
   }
   @override
@@ -46,15 +44,8 @@ class _onboardingbodyState extends State<onboardingbody> {
         Visibility(
           visible:pageController!.hasClients ? (pageController?.page == 1 ?false : true) : true ,
           child: Positioned (top: sizeconfig.defaultsize! * 10,
-          right: 32,
-          child: Text(
-            'Skip',
-            style: TextStyle(
-             fontFamily:'Nunito-Regular.ttf',
-             fontSize: 19,
-             color: ktextcolor,
-            ),
-          ),
+          right:5,
+         child: skipbuttom()
           ),
         ),
         Positioned(
@@ -67,7 +58,7 @@ class _onboardingbodyState extends State<onboardingbody> {
                pageController?.nextPage(
                  duration: Duration(milliseconds:500), curve:Curves.easeIn );
              } else{
-               Get.to(()=> homeview(), transition: Transition.rightToLeft, duration: Duration(milliseconds: 300));
+               Get.to(()=> My_bottom_nav_bar(), transition: Transition.rightToLeft, duration: Duration(milliseconds: 200));
              }
            },
            text:pageController!.hasClients ?(pageController?.page ==1 ? 'Get started' : 'Next') : 'Next',
